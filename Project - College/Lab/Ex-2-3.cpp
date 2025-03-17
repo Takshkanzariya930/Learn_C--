@@ -14,17 +14,14 @@ class sptr {
 
     void display()
     {
-        for(int i=0;i<stringptr[i] != '\0';i++)
-        {
-            cout<<*(stringptr + i);
-        }
+        cout<<stringptr;
     }
 
 };
 
 int main()
 {
-    sptr obj1;
+    sptr obj1,obj2;
 
     char str1[100];
 

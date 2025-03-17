@@ -3,7 +3,7 @@ using namespace std;
 
 class Area {
 
-    float base,height,length,radius;
+    // float base,height,length,radius;
 
     public:
 

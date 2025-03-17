@@ -24,7 +24,6 @@ class arithmetic
     }
 };
 
-B
 int main()
 {
     arithmetic obj;
