@@ -155,9 +155,9 @@ int main()
             cin.getline(str2,100);
             result = s.stringsearch(str1,str2);
             if(result == 0)
-            cout<<"String '"<<str2<<"' NOT found in '"<<str1<<"'";
+                cout<<"String '"<<str2<<"' NOT found in '"<<str1<<"'";
             else
-            cout<<"String '"<<str2<<"' is at "<<result<<" position in '"<<str1<<"' ";
+                cout<<"String '"<<str2<<"' is at "<<result<<" position in '"<<str1<<"' ";
             break;
     
         default:
