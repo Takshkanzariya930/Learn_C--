@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int *carray(int s)
+int *createarray(int s)
 {
     int *arr = new int[s];
     return arr;
@@ -14,7 +14,7 @@ int main()
     cout<<"Enter size of array : ";
     cin>>s;
 
-    arr = carray(s);
+    arr = createarray(s);
 
     for(int i=0;i<s;i++)
     {
