@@ -25,7 +25,7 @@ class student
 
     static void showcount()
     {
-        cout<<"No of students are : "<<count;
+        cout<<"No of students are : "<<count<<endl;
     }
 };
 
