@@ -1,39 +1,43 @@
 #include <iostream>
-#include <iomanip>  // For manipulators
+#include <iomanip>
 using namespace std;
 
-int main() {
-    const int numItems = 3; // Number of items to input
-    string itemName[numItems];
-    int itemCode[numItems];
-    double cost[numItems];
+int main() 
+{
+    int noitems = 3 ;
+    string itemname[noitems];
+    int itemcode[noitems];
+    double itemcost[noitems];
 
-    // Reading item details
-    cout << "Enter details for " << numItems << " items (Name, Code, Cost):\n";
-    for (int i = 0; i < numItems; i++) {
-        cout << "Item " << i + 1 << " Name: ";
-        cin >> ws; // To clear any leftover newline characters
-        getline(cin, itemName[i]);
+    for(int i = 0;i < noitems;i++)
+    {
+        cout<<"Item "<<i+1<<" : "<<endl;
+        cout<<"Enter Item name : ";
+        cin>>itemname[i];
 
-        cout << "Item " << i + 1 << " Code: ";
-        cin >> itemCode[i];
+        cout<<"Enter Item code : ";
+        cin>>itemcode[i];
 
-        cout << "Item " << i + 1 << " Cost: ";
-        cin >> cost[i];
+        cout<<"Enter Item cost : ";
+        cin>>itemcost[i];
     }
 
-    // Displaying formatted output
-    cout << "\n--------------------------------------------------\n";
-    cout << setw(20) << left << "Item Name" 
-         << setw(10) << "Item Code" 
-         << setw(10) << "Cost" << endl;
-    cout << "--------------------------------------------------\n";
+    cout<<"\nList of Items ....................\n"<<endl;
+    
+    cout<<left
+        <<setw(15)<<"NAME"
+        <<setw(10)<<"CODE"
+        <<setw(10)<<"COST"<<endl;
 
-    for (int i = 0; i < numItems; i++) {
-        cout << setw(20) << left << itemName[i]
-             << setw(10) << itemCode[i]
-             << setw(10) << fixed << setprecision(2) << cost[i] << endl;
+    cout<<string(60,'-')<<endl;
+
+    for(int i = 0;i<noitems;i++)
+    {
+        cout<<left
+            <<setw(15)<<itemname[i]
+            <<setw(10)<<itemcode[i]
+            <<setw(10)<<itemcost[i]<<endl;
     }
 
-    return 0;
+        
 }
