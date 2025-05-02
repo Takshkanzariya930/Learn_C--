@@ -1,3 +1,3 @@
 Car_ID,Car_Model,Tranmission,Number_of_seats,Number_of_child_seats,Availability_of_GPS,Availability_of_AC,Car_availability,Rental_cost,Customer_ID
-4356,inova,manual,4,1,1,1,0,3000,0
+4356,inova,manual,4,1,1,1,0,3000,1234
 3426,baleno,manual,6,1,1,1,1,7000,0

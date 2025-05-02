@@ -111,7 +111,7 @@ class Car
                 cout<<left<<setw(34)<<setfill('-')<<"Availability of AC : "<<" "<<replace(fields[6])<<endl;            
                 cout<<left<<setw(34)<<setfill('-')<<"Availability of Car : "<<" "<<replace(fields[7])<<endl;            
                 cout<<left<<setw(34)<<setfill('-')<<"Cost of rental per Day : "<<" "<<fields[8]<<endl;
-                cout<<left<<setw(34)<<setfill('-')<<"Customer ID : "<<" "<<fields[9]<<endl;
+                cout<<left<<setw(34)<<setfill('-')<<"Customer ID : "<<" "<<fields[9]<<setfill(' ')<<endl;
                 found = 1;
             }
         }
@@ -155,7 +155,7 @@ class Car
                 cout<<left<<setw(34)<<setfill('-')<<"Availability of AC : "<<" "<<replace(fields[6])<<endl;            
                 cout<<left<<setw(34)<<setfill('-')<<"Availability of Car : "<<" "<<replace(fields[7])<<endl;            
                 cout<<left<<setw(34)<<setfill('-')<<"Cost of rental per Day : "<<" "<<fields[8]<<endl;
-                cout<<left<<setw(34)<<setfill('-')<<"Customer ID : "<<" "<<fields[9]<<endl;
+                cout<<left<<setw(34)<<setfill('-')<<"Customer ID : "<<" "<<fields[9]<<setfill(' ')<<endl;
                 found = 1;
             }
         }
@@ -318,8 +318,6 @@ class Car
         string line;
         ifstream car_ifile("car_data.csv");
     
-        cout<<"List of AVAILABLE cars............"<<endl;
-    
         cout<<"\n"<<left
             <<setw(6)<<"ID"
             <<setw(16)<<"Model"
@@ -446,7 +444,6 @@ class Customer
         cout<<"Enter Customer Address : ";
         getline(cin,Customer_Address);
 
-        getchar();
         cout<<"Enter Customer Phone No. : ";
         cin>>Customer_PhoneNo ;
 
@@ -504,7 +501,7 @@ class Customer
                 cout<<left<<setw(28)<<"Security deposit : "<<" "<<fields[5]<<endl;
                 cout<<left<<setw(28)<<"Car ID : "<<" "<<fields[6]<<endl;
                 cout<<left<<setw(28)<<"Car rented for No. days : "<<" "<<fields[7]<<endl;
-                cout<<left<<setw(28)<<"Active Customer : "<<" "<<replace(fields[8])<<endl;
+                cout<<left<<setw(28)<<"Active Customer : "<<" "<<replace(fields[8])<<setfill(' ')<<endl;
                 found = 1;
             }
         }
@@ -592,8 +589,6 @@ class Customer
         string line;
         ifstream cus_ifile("customer_data.csv");
 
-        cout<<"List of ACTIVE customers.................."<<endl;
-
         cout<<"\n"<<left
         <<setw(6)<<"ID"
         <<setw(16)<<"Name"
@@ -658,14 +653,15 @@ class Customer
     }
 };
 
-
 int main()
 {
     Car car1;
     Customer cus1;
 
-    int choice;
+    string cchoice ;
+    int choice = 0;
     int temp;
+    bool tof;
 
     cout<<"Car Rental System"<<endl;
 
@@ -673,72 +669,145 @@ int main()
     
     cout<<string(30,'-')<<setfill('-')<<endl; 
     
-    cout<<"\n"<<left<<setw(10)<<"1  "<<setw(10)<<setfill('-')<<" Add Car to Inventory"<<endl;
-    cout<<left<<setw(10)<<"2  "<<setw(10)<<setfill('-')<<" Search Car in Inventory (By Car ID)"<<endl;
-    cout<<left<<setw(10)<<"3  "<<setw(10)<<setfill('-')<<" Search Car in Inventory (By Customer ID)"<<endl;
-    cout<<left<<setw(10)<<"4  "<<setw(10)<<setfill('-')<<" Check Availability of Car"<<endl;
-    cout<<left<<setw(10)<<"5  "<<setw(10)<<setfill('-')<<" Change Availability of Car"<<endl;
-    cout<<left<<setw(10)<<"6  "<<setw(10)<<setfill('-')<<" List out Available Cars"<<endl;
-    cout<<left<<setw(10)<<"7  "<<setw(10)<<setfill('-')<<" Delete Car from Inventory"<<endl;
-    cout<<left<<setw(10)<<"8  "<<setw(10)<<setfill('-')<<" Add Customer To Database and Rent a Car"<<endl;
-    cout<<left<<setw(10)<<"9  "<<setw(10)<<setfill('-')<<" Search Customer in Database (By Customer ID)"<<endl;
-    cout<<left<<setw(10)<<"10 "<<setw(10)<<setfill('-')<<" Change Active service to Inactive of an Customer"<<endl;
+    cout<<"\n"<<left<<setfill('-')<<setw(10)<<"1  "<<setw(10)<<" Add Car to Inventory"<<endl;
+    cout<<left<<setw(10)<<"2  "<<setw(10)<<" Search Car in Inventory (By Car ID)"<<endl;
+    cout<<left<<setw(10)<<"3  "<<setw(10)<<" Search Car in Inventory (By Customer ID)"<<endl;
+    cout<<left<<setw(10)<<"4  "<<setw(10)<<" Check Availability of Car"<<endl;
+    cout<<left<<setw(10)<<"5  "<<setw(10)<<" Change Availability of Car"<<endl;
+    cout<<left<<setw(10)<<"6  "<<setw(10)<<" List out Available Cars"<<endl;
+    cout<<left<<setw(10)<<"7  "<<setw(10)<<" Delete Car from Inventory"<<endl;
+    cout<<left<<setw(10)<<"8  "<<setw(10)<<" Add Customer To Database and Rent a Car"<<endl;
+    cout<<left<<setw(10)<<"9  "<<setw(10)<<" Search Customer in Database (By Customer ID)"<<endl;
+    cout<<left<<setw(10)<<"10 "<<setw(10)<<" Change Active service to Inactive of an Customer"<<endl;
     cout<<left<<setw(10)<<"11 "<<setw(10)<<" List out Active Customer"<<endl;
-
-
-    cout<<"\n--> Enter your choice : "; cin>>choice;
-
-    switch(choice)
+    cout<<left<<setw(10)<<"99 "<<setw(10)<<" To EXIT PROGRAM"<<setfill(' ')<<endl;
+    
+    while(true)
     {
-        case 1:
-            cout<<"\nAdd Car to Inventory :-"<<endl;
-            car1.set_data();
-            car1.Register_to_inventory();
-            break;
+        cout<<"\n--> Enter your choice : "; cin>>choice;
 
-        case 2:
-            cout<<"\nSearch Car in Inventory (By Car ID) :-"<<endl;
+        switch(choice)
+        {
+            case 1:
+                cout<<"\nAdd Car to Inventory :-"<<endl;
+                car1.set_data();
+                car1.Register_to_inventory();
+                break;
 
-            cout<<"\nEnter Car ID to search from inventory : ";
-            cin>>temp;
-            cout<<endl;
+            case 2:
+                cout<<"\nSearch Car in Inventory (By Car ID) :-"<<endl;
 
-            Car::Search_in_inventory_by_carID(temp);
-            break;
+                cout<<"\nEnter Car ID to search from inventory : ";
+                cin>>temp;
+                cout<<endl;
 
-        case 3:
-            cout<<"\nSearch Car in Inventory (By Customer ID) :-"<<endl;
+                Car::Search_in_inventory_by_carID(temp);
+                break;
 
-            cout<<"\nEnter Customer ID to search from inventory : ";
-            cin>>temp;
-            cout<<endl;
+            case 3:
+                cout<<"\nSearch Car in Inventory (By Customer ID) :-"<<endl;
 
-            Car::Search_in_inventory_by_customerID(temp);
-            break;
+                cout<<"\nEnter Customer ID to search from inventory : ";
+                cin>>temp;
+                cout<<endl;
 
-        case 4:
-            cout<<"\nCheck Availability of Car :-"<<endl;
+                Car::Search_in_inventory_by_customerID(temp);
+                break;
 
-            cout<<"\nEnter Car ID to check availability : ";
-            cin>>temp;
-            cout<<endl;
+            case 4:
+                cout<<"\nCheck Availability of Car :-"<<endl;
 
-            if(Car::check_availability(temp) == true)
-                cout<<"--> Car "<<temp<<" is AVAILABLE for Rental.";
-            else
-                cout<<"--> Car "<<temp<<" is NOT AVAILABLE for Rental.";
+                cout<<"\nEnter Car ID to check availability : ";
+                cin>>temp;
+                cout<<endl;
 
-            break;
+                if(Car::check_availability(temp) == true)
+                    cout<<"--> Car "<<temp<<" is AVAILABLE for Rental.";
+                else
+                    cout<<"--> Car "<<temp<<" is NOT AVAILABLE for Rental.";
 
-        case 5:
-            cout<<"\nChange Availability of Car :-"<<endl;
+                break;
 
+            case 5:
+                cout<<"\nChange Availability of Car :-"<<endl;
+
+                cout<<"\nEnter Car ID to Change Availability : ";
+                cin>>temp;
+
+                cout<<"Enter '1' to change status to available and '2' to NOT available : ";
+                cin>>tof;
+
+                Car::Change_availability(temp,tof);
+                break;
             
+            case 6:
+                cout<<"\nList out Available Cars :-"<<endl;
 
-        
-            
-        default :
-            cout<<"\n................... Incorrect choice please try again ................";
+                Car::Available_cars();
+                break;
+
+            case 7:
+                cout<<"\nDelete Car from Inventory :-"<<endl;
+
+                cout<<"\nEnter Car ID which you want to delete : ";
+                cin>>temp;
+
+                Car::delete_car(temp);
+
+                cout<<"\nDELETED Car with ID "<<temp<<" from inventory...";
+
+                break;
+
+            case 8:
+                cout<<"\nAdd Customer To Database and Rent a Car :-"<<endl;
+
+                cus1.set_data();
+                cus1.Register_to_database();
+
+                break;
+
+            case 9:
+                cout<<"\nSearch Customer in Database (By Customer ID) :-"<<endl;
+                
+                cout<<"Enter Customer ID which you want to search : ";
+                cin>>temp;
+                
+                Customer::search_in_database(temp);
+                
+                break;
+                
+            case 10:
+                cout<<"\nChange Active service to Inactive of an Customer :-"<<endl;
+                
+                cout<<"Enter Customer ID which you want to change service status : ";
+                cin>>temp;
+                
+                Customer::change_active_status_to_inactive(temp);
+
+                cout<<"\nChanged service status to in inactive for "<<temp<<" .";
+                
+                break;
+
+            case 11:
+                cout<<"\nList out Active Customer :-"<<endl;
+
+                Customer::active_customer();
+                break;
+
+                
+                
+            default :
+                cout<<"\n................... Incorrect choice please try again ................";
+                break;
+        }
+
+        cout<<"\n\n"<<string(150,'-')<<endl;
+        cout<<"\n--> Press 'Y' to continue : "; cin>>cchoice;
+
+        if(cchoice != "Y" || cchoice != "y" || cchoice != " Y" || cchoice != " y") 
             break;
+
     }
+
+    cout<<"\nEXITED program..............................";
 }
