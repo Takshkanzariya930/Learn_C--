@@ -1,10 +1,39 @@
-This is first line
-This is second line
-This is first line
-This is second line
-This is first line
-This is second line
-This is first line
-This is second line
-This is first line
-This is second line
+
+.....Car Rental System.....
+
+Press     Action    
+------------------------------
+
+1  ------- Add Car to Inventory
+2  ------- Search Car in Inventory (By Car ID)
+3  ------- Search Car in Inventory (By Customer ID)
+4  ------- Check Availability of Car
+5  ------- Change Availability of Car
+6  ------- List out Available Cars
+7  ------- Delete Car from Inventory
+8  ------- Add Customer To Database and Rent a Car
+9  ------- Search Customer in Database (By Customer ID)
+10 ------- Change Active service to Inactive of an Customer
+11 ------- List out Active Customer
+
+--> Enter your choice : 3
+
+Search Car in Inventory (By Customer ID) :-
+
+Enter Customer ID to search from inventory : 1234
+
+Car ID : ------------------------- 4356
+Car Model : ---------------------- inova
+Type of Transmission : ----------- manual
+Number of Seats in Car : --------- 4
+Number of CHILD Seats in Car : --- 1
+Availability of GPS : ------------ true
+Availability of AC : ------------- true
+Availability of Car : ------------ false
+Cost of rental per Day : --------- 3000
+Customer ID : -------------------- 1234
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------  
+
+--> Press 'Y' to continue :

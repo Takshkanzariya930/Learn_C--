@@ -658,12 +658,13 @@ int main()
     Car car1;
     Customer cus1;
 
-    string cchoice ;
+    int i = 0;
+    char cchoice ;
     int choice = 0;
     int temp;
     bool tof;
 
-    cout<<"Car Rental System"<<endl;
+    cout<<"\n.....Car Rental System....."<<endl;
 
     cout<<"\n"<<left<<setw(10)<<"Press"<<setw(10)<<"Action"<<endl;
     
@@ -680,7 +681,6 @@ int main()
     cout<<left<<setw(10)<<"9  "<<setw(10)<<" Search Customer in Database (By Customer ID)"<<endl;
     cout<<left<<setw(10)<<"10 "<<setw(10)<<" Change Active service to Inactive of an Customer"<<endl;
     cout<<left<<setw(10)<<"11 "<<setw(10)<<" List out Active Customer"<<endl;
-    cout<<left<<setw(10)<<"99 "<<setw(10)<<" To EXIT PROGRAM"<<setfill(' ')<<endl;
     
     while(true)
     {
@@ -804,9 +804,10 @@ int main()
         cout<<"\n\n"<<string(150,'-')<<endl;
         cout<<"\n--> Press 'Y' to continue : "; cin>>cchoice;
 
-        if(cchoice != "Y" || cchoice != "y" || cchoice != " Y" || cchoice != " y") 
+        if((cchoice != 'Y' && cchoice != 'y') || i >= 10) 
             break;
 
+        i++;
     }
 
     cout<<"\nEXITED program..............................";

@@ -68,7 +68,7 @@ class PartTimeEmployee : public Employee
         cout<<"Enter Hourly Wage of Part time employee : ";
         cin>>hourly_wage;
 
-        cout<<"Enter mo. of Hours employee Worked for : ";
+        cout<<"Enter No. of Hours employee Worked for : ";
         cin>>hour_worked;
 
         salary = hour_worked * hourly_wage;
@@ -97,4 +97,6 @@ int main()
     ptr->calculateSalary();
     ptr->get_data();
     ptr->display_salary();
+
+    delete ptr;
 }
