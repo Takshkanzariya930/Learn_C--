@@ -29,7 +29,7 @@ class Car
     public:
 
     void set_data()
-    {
+    {           
         string temp;
 
         cout<<"Enter Car ID : ";
@@ -651,6 +651,7 @@ class Customer
         cus_ifile.close();
         return t_customer;
     }
+    
 };
 
 int main()
@@ -668,7 +669,7 @@ int main()
 
     cout<<"\n"<<left<<setw(10)<<"Press"<<setw(10)<<"Action"<<endl;
     
-    cout<<string(30,'-')<<setfill('-')<<endl; 
+    cout<<string(30,'-')<<endl; 
     
     cout<<"\n"<<left<<setfill('-')<<setw(10)<<"1  "<<setw(10)<<" Add Car to Inventory"<<endl;
     cout<<left<<setw(10)<<"2  "<<setw(10)<<" Search Car in Inventory (By Car ID)"<<endl;
@@ -680,7 +681,7 @@ int main()
     cout<<left<<setw(10)<<"8  "<<setw(10)<<" Add Customer To Database and Rent a Car"<<endl;
     cout<<left<<setw(10)<<"9  "<<setw(10)<<" Search Customer in Database (By Customer ID)"<<endl;
     cout<<left<<setw(10)<<"10 "<<setw(10)<<" Change Active service to Inactive of an Customer"<<endl;
-    cout<<left<<setw(10)<<"11 "<<setw(10)<<" List out Active Customer"<<endl;
+    cout<<left<<setw(10)<<"11 "<<setw(10)<<setfill(' ')<<" List out Active Customer"<<endl;
     
     while(true)
     {
@@ -801,6 +802,7 @@ int main()
                 break;
         }
 
+        getchar();
         cout<<"\n\n"<<string(150,'-')<<endl;
         cout<<"\n--> Press 'Y' to continue : "; cin>>cchoice;
 
